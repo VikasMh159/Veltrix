@@ -118,7 +118,7 @@ const DEPARTMENTS = [
 ];
 
 export default function App() {
-  const [currentScreen, setCurrentScreen] = useState<Screen>('splash');
+  const [currentScreen, setCurrentScreen] = useState<Screen>('login');
   const [previousScreen, setPreviousScreen] = useState<Screen>('employees');
   const [selectedEmployeeId, setSelectedEmployeeId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -159,13 +159,6 @@ export default function App() {
   const showToast = (message: string, type: 'success' | 'info' = 'success') => {
     setToast({ message, type });
   };
-
-  useEffect(() => {
-    if (currentScreen === 'splash') {
-      const timer = setTimeout(() => setCurrentScreen('login'), 2500);
-      return () => clearTimeout(timer);
-    }
-  }, [currentScreen]);
 
   const selectedEmployee = useMemo(() => 
     employees.find(e => e.id === selectedEmployeeId),
@@ -683,8 +676,8 @@ function SplashScreen({ theme }: { theme: 'dark' | 'light' }) {
             <TrendingUp size={64} className="text-indigo-500" strokeWidth={2.5} />
           </motion.div>
         </div>
-        <h1 className={`text-5xl font-display font-bold tracking-tight text-glow transition-colors duration-500 ${theme === 'light' ? 'text-slate-900' : 'text-white'}`}>MindMatrix</h1>
-        <p className="text-indigo-500 mt-4 font-bold tracking-[0.3em] uppercase text-[10px] opacity-80">Workforce Intelligence</p>
+        <h1 className={`text-5xl font-display font-bold tracking-tight text-glow transition-colors duration-500 ${theme === 'light' ? 'text-slate-900' : 'text-white'}`}>Veltrix</h1>
+        <p className="text-indigo-500 mt-4 font-bold tracking-[0.3em] uppercase text-[10px] opacity-80">Employee Performance Tracker</p>
       </motion.div>
       
       <div className="absolute bottom-16">

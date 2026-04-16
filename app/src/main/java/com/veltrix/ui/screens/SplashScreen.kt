@@ -44,10 +44,10 @@ fun SplashScreen(onAnimationFinished: () -> Unit) {
             modifier = Modifier.alpha(alpha.value).scale(scale.value)
         ) {
             Image(
-                painter = painterResource(id = R.drawable.veltrix),
+                painter = painterResource(id = R.drawable.veltrix_splash_logo),
                 contentDescription = "Veltrix logo",
                 modifier = Modifier
-                    .size(132.dp),
+                    .size(180.dp),
                 contentScale = ContentScale.Fit
             )
         }
