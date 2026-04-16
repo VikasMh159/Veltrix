@@ -1,1 +1,4 @@
+web-source/** linguist-detectable=false
 web-source/** linguist-vendored
+web-source/** linguist-generated=true
+app/src/main/assets/** linguist-generated=true
